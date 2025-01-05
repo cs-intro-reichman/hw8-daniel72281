@@ -47,7 +47,7 @@
             return false;
         }
         for(int i=0;i<this.getfCount();i++){
-            if(this.getfFollows()[i].equals(name)){
+            if(this.getfFollows()[i].toLowerCase().equals(name.toLowerCase())){
                 return true;
             }
         }           
