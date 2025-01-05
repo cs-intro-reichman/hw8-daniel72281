@@ -72,6 +72,9 @@ public class Network {
         if (this.getUser(name1)==null||this.getUser(name2)==null) {
             return false;
         }
+        if(!this.getUser(name1).addFollowee(name2)){
+            return false;
+        }
         this.getUser(name1).addFollowee(name2);
         return false;
     }
@@ -85,7 +88,7 @@ public class Network {
         int max = 0;
         String recommended = new String();
         for(int i=0;i<this.getUserCount();i++){
-            if( this.getUser(name).countMutual(users[i])>max && this.users[i].getName()!=name){
+            if( this.getUser(name).countMutual(this.users[i])>max && this.users[i].getName()!=name){
                 max=this.getUser(name).countMutual(users[i]);
                 recommended = this.users[i].getName();
 
