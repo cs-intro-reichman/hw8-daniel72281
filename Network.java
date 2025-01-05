@@ -56,7 +56,7 @@ public class Network {
         User user1 = new User(name);
         this.users[this.getUserCount()]= user1;
         this.userCount++;
-        return false;
+        return true;
     }
 
     /** Makes the user with name1 follow the user with name2. If successful, returns true.
@@ -75,8 +75,8 @@ public class Network {
         if(!this.getUser(name1).addFollowee(name2)){
             return false;
         }
-        this.getUser(name1).addFollowee(name2);
-        return false;
+
+        return this.getUser(name1).addFollowee(name2);
     }
     
     /** For the user with the given name, recommends another user to follow. The recommended user is
