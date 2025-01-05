@@ -34,7 +34,7 @@ public class Network {
             return null;
         }
         for(int i=0;i<this.getUserCount();i++){
-            if(this.users[i].getName().equals(name)){
+            if(this.users[i].getName().toLowerCase().equals(name.toLowerCase())){
                 return users[i];
 
             }
@@ -105,6 +105,9 @@ public class Network {
                 pop = this.users[i].getName();
             }
 
+        }
+        if (max==0){
+            return null;
         }
         return pop;
     }
